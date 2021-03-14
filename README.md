@@ -1,6 +1,6 @@
 # go-prisma-example
 
-Example Go app using [prisma](https://www.prisma.io/).
+Example Go app using [prisma](https://www.prisma.io/) and [ky](https://github.com/sindresorhus/ky).
 
 ## Build
 
