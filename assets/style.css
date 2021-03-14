@@ -1,0 +1,80 @@
+.task.done .title {
+  text-decoration: line-through;
+  opacity: 0.3;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  padding: 1em 0;
+}
+
+.task .title {
+  flex-grow: 1;
+}
+
+.task-list {
+  border-top: 1px solid #2f49770d;
+  min-height: 13em;
+}
+
+body {
+  font-family: "system-ui";
+}
+
+.task input[type="checkbox"] {
+  margin-right: 1.5em;
+}
+
+.task .remove {
+  font-size: 1.5em;
+  font-weight: 100;
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+body {
+  background: white;
+  color: #4f5375;
+  width: 28em;
+  margin: 3em auto;
+  box-shadow: 0 2em 5em #132c531a;
+  border-radius: 0.5em;
+  padding: 1em 1.5em;
+}
+
+html {
+  background: #f8f8f8;
+}
+
+.task {
+  animation: 0.6s cubic-bezier(0.43, 0.51, 0.21, 0.97) 0s taskAppear;
+}
+@keyframes taskAppear {
+  0% {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.new-task {
+  display: flex;
+}
+
+.new-task input[type="text"] {
+  flex-grow: 1;
+  margin: 2em 0;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.5em 0.7em;
+  outline-width: 1px;
+  border: 1px solid #0000001a;
+}
+
+.new-task input[type="text"]::-webkit-input-placeholder {
+  color: #5a5d8038;
+}
