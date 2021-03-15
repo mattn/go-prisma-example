@@ -12,7 +12,7 @@ $ go generate
 $ go build
 $ echo 'DATABASE_URL=postgresql://yourname:yourname@localhost:5432/postgres' > .env
 $ npx prisma db push --preview-feature
-$ ./go-prisma-example
+$ DATABASE_URL=postgresql://yourname:yourname@localhost:5432/postgres ./go-prisma-example
 ```
 
 Then you can use [TODO app](http://localhost:8989)! :tada:
