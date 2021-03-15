@@ -12,6 +12,6 @@ generator client {
 
 model Task {
   id        Int @id @default(autoincrement())
-  text      String?
-  completed Boolean? @default(false)
+  text      String @unique
+  completed Boolean @default(false)
 }
