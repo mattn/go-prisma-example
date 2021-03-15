@@ -35,14 +35,8 @@ func main() {
 			c.Logger().Error("Bind: ", err)
 			return c.String(http.StatusBadRequest, "Bind: "+err.Error())
 		}
-		var text *string
-		if newText, ok := task.Text(); ok {
-			text = &newText
-		}
-		var completed *bool
-		if newCompleted, ok := task.Completed(); ok {
-			completed = &newCompleted
-		}
+		text := &task.Text
+		completed := &task.Completed
 		newTask, err := client.Task.CreateOne(
 			db.Task.Text.SetIfPresent(text),
 			db.Task.Completed.SetIfPresent(completed),
@@ -69,14 +63,8 @@ func main() {
 			c.Logger().Error("Bind: ", err)
 			return c.String(http.StatusBadRequest, "Bind: "+err.Error())
 		}
-		var text *string
-		if newText, ok := task.Text(); ok {
-			text = &newText
-		}
-		var completed *bool
-		if newCompleted, ok := task.Completed(); ok {
-			completed = &newCompleted
-		}
+		text := &task.Text
+		completed := &task.Completed
 		newTask, err := client.Task.FindUnique(
 			db.Task.ID.Equals(task.ID),
 		).Update(
