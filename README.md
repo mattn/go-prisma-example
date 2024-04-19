@@ -11,7 +11,7 @@ Then try following commands.
 $ go generate
 $ go build
 $ echo 'DATABASE_URL=postgresql://yourname:yourname@localhost:5432/postgres' > .env
-$ npx prisma db push --preview-feature
+$ npx prisma db push
 $ ./go-prisma-example
 ```
 

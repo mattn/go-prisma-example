@@ -1,6 +1,6 @@
-import {html, render} from 'https://unpkg.com/lit-html?module';
-import {classMap} from 'https://unpkg.com/lit-html/directives/class-map?module';
-import ky from 'https://unpkg.com/ky/index.js';
+import {html, render} from 'https://unpkg.com/lit-html@3.1.3/lit-html.js';
+import {classMap} from 'https://unpkg.com/lit-html/directives/class-map';
+import ky from 'https://unpkg.com/ky@1.2.3/distribution/index.js';
 
 const TaskItem = (
   task,
