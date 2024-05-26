@@ -1,0 +1,5 @@
+.env
+go-prisma-example
+go-prisma-example.exe
+test.sh
+prisma/db
