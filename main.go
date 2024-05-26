@@ -4,6 +4,8 @@ package main
 
 import (
 	"context"
+	"embed"
+	"io/fs"
 	"log"
 	"mime"
 	"net/http"
@@ -12,6 +14,15 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/mattn/go-prisma-example/prisma/db"
 )
+
+const name = "go-prisma-example"
+
+const version = "0.0.0"
+
+var revision = "HEAD"
+
+//go:embed assets
+var assets embed.FS
 
 func main() {
 	client := db.NewClient()
@@ -116,6 +127,7 @@ func main() {
 		return c.JSON(http.StatusOK, task)
 	})
 
-	e.Static("/", "assets")
+	sub, _ := fs.Sub(assets, "assets")
+	e.GET("/*", echo.WrapHandler(http.FileServer(http.FS(sub))))
 	e.Logger.Fatal(e.Start(":8989"))
 }
