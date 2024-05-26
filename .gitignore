@@ -2,3 +2,4 @@
 go-prisma-example
 go-prisma-example.exe
 test.sh
+k8s/secret.yaml

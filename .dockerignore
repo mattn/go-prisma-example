@@ -3,3 +3,4 @@ go-prisma-example
 go-prisma-example.exe
 test.sh
 prisma/db
+k8s
