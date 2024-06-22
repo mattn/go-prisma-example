@@ -71,7 +71,7 @@ const App = () => html`
       store().tasks,
       (id, completed) => {
         (async () => {
-          const task = await ky.post('/tasks/' + id, {
+          await ky.post('/tasks/' + id, {
             json: { id: id, completed: completed }
           }).json();
           store({
@@ -81,7 +81,7 @@ const App = () => html`
       },
       id => {
         (async () => {
-          const task = await ky.delete('/tasks/' + id, {
+          await ky.delete('/tasks/' + id, {
             json: { id: id }
           }).json();
           store({ tasks: store().tasks.filter(t => t.id !== id) })
@@ -105,7 +105,7 @@ const createStore = (initialState) => {
   }
 }
 
-let store = createStore({
+const store = createStore({
   tasks: await ky.get('/tasks').json(),
   selectedTasks: [],
   inputText: "",
